@@ -1,5 +1,4 @@
-# **RASP**
-# **Road Accident Severity Prediction**
+# **RASP: Road Accident Severity Prediction**
 
 ### **1. Project Selection**
 
