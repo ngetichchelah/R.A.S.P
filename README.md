@@ -1,53 +1,111 @@
-# **Project: Road Accident Severity Prediction**
+### Road Accident Severity Prediction
+1. **Project Selection**
 
-Goal: Build a supervised classification model to predict the severity of a road accident (Slight, Serious, or Fatal) using features such as weather, road conditions, time of day, vehicle type, etc.
+Problem Statement:
+Predict the severity of road accidents (Slight, Serious, Fatal) using environmental, human, and vehicle-related factors.
 
-1. Problem Definition
-Business context: Transport authorities want to identify high-risk conditions for fatal accidents to improve safety policies.
-ML framing: Multi-class classification (target variable = accident severity).
+Why chosen:
+Road safety is a major global challenge.
 
-2. Data Acquisition
-Dataset options:
-UK Road Safety Data (Data.gov.uk)
- – yearly CSV files with thousands of accidents.
-Kenya Open Data
- – check NTSA accident reports (smaller dataset, but local relevance).
-Each record typically has:
-Categorical features: road surface (dry/wet), weather, light conditions, vehicle type.
-Numerical features: number of vehicles involved, number of casualties, age of driver.
-Target: Accident severity (slight, serious, fatal).
+Identifying risk factors can help policymakers design better interventions.
 
-3. Data Preprocessing
-- Handle missing values (e.g., unknown weather → "Unknown").
-- Convert categorical variables (e.g., weather = sunny/rain/snow) → One-hot encoding or label encoding.
-- Normalize/standardize numerical variables (optional, especially if using distance-based models).
-- Handle class imbalance (fatal accidents are much fewer than slight ones) using:
-- Oversampling (SMOTE)
-- Class weights in models
+Dataset is rich, real-world, and publicly available.
 
-4. Exploratory Data Analysis (EDA)
-- Accident frequency by time of day, day of week, weather, and road conditions.
-- Accident severity distribution (imbalanced!).
-- Correlation heatmaps for numeric features.
-- Feature importance preview (Random Forest/XGBoost).
+Type of ML Task:
+Classification (multi-class).
 
-5. Feature Engineering
+2. **Problem Definition**
+Predict accident severity from road, weather, driver, and vehicle features.
 
-6. Model Selection
+Why is it important?
+Fatal accidents are rare but devastating. Predicting severity can help with preventive policies.
 
-7. Model Evaluation
+Who benefits?
+Transport authorities (NTSA, UK Dept of Transport)
+Emergency responders
+Road safety planners
 
-8. Hyperparameter Tuning
-- GridSearchCV or RandomizedSearchCV 
+3. **Data Collection & Understanding**
+Source: UK STATS19 Road Safety Dataset
 
-9. Model Interpretation
 
-10. Deployment
+Tables used:
+Collisions (road & environment factors)
+Casualties (human factors)
+Vehicles (vehicle details)
 
-### Deliverables:
+Exploration:
+Data types: mix of categorical (weather, light, road surface) and numerical (speed limit, age).
 
-Clean dataset.
-- EDA visualizations.
-- Model training notebook (with multiple models + tuned final model).
-- Evaluation report (with confusion matrix, precision/recall/F1).
-- Deployment app or dashboard.
+Missing values present in some fields.
+
+Severe class imbalance (Fatal ≪ Slight).
+
+Outliers: extreme ages, invalid speed values.
+
+EDA visualizations:
+Severity distribution.
+Accidents by time of day.
+Correlation between road conditions & severity.
+
+4. **Data Preprocessing**
+Handle missing values (impute with mode/median, “Unknown” for categories).
+Encode categorical variables (One-Hot or Label encoding).
+Normalize/standardize numerical features if required.
+Address imbalanced target (use SMOTE oversampling + class weights).
+Split into Train (70%) / Test (30%) sets or 80/20
+
+5. **Modeling**
+
+Baseline models: Logistic Regression, Decision Tree.
+Advanced models: Random Forest, XGBoost.
+Compare performance across models.
+Use GridSearchCV / RandomizedSearchCV for hyperparameter tuning.
+Select best-performing model (tradeoff between accuracy & interpretability).
+
+6. **Evaluation**
+
+Metrics:
+Accuracy
+Precision, Recall, F1 (macro average for multi-class)
+Confusion matrix
+Model diagnostics:
+Validation curves (e.g., depth in trees).
+Learning curves (detect underfitting/overfitting).
+Feature importance: Identify top contributors to severity (e.g., weather, light, speed limit).
+
+7. **Error Analysis**
+Confusion matrix to see which severities are most confused.
+Fatal vs Serious often misclassified (due to low fatal samples).
+Errors higher during rare conditions (e.g., fog).
+
+Reasons:
+Imbalanced classes (few fatal samples).
+Some features are noisy or incomplete.
+Improvements:
+Collect more balanced data.
+Engineer features (rush hour, weekend/weekday, rural/urban).
+Try ensemble models.
+
+8. **Model Interpretation**
+Tree-based feature importance: e.g., road type, speed limit, light conditions.
+SHAP values: show how individual features contribute to predictions.
+Plain explanation:
+“Accidents on wet roads at night are more likely to be serious/fatal.”
+“Higher speed limits correlate with more severe accidents.”
+
+9. **Deployment**
+Build a Streamlit app:
+Input accident conditions → Output predicted severity.
+Show top contributing features.
+
+10. **Project Report Structure**
+
+Title & Abstract – Road Accident Severity Prediction using Machine Learning
+Problem Statement – Why this matters (road safety)
+Data Collection & Understanding – STATS19 dataset overview, EDA
+Data Preprocessing – Cleaning, encoding, balancing
+Modeling Approach – Models tried, tuning process
+Results & Evaluation – Metrics, confusion matrix, learning/validation curves
+Error Analysis – Where model struggles and why
+Conclusion & Future Work – Policy insights, improving rare class predictions
