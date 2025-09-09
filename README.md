@@ -13,20 +13,16 @@
 - Dataset is rich, real-world, and publicly available.
 
 Type of ML Task:
-
 - Classification (multi-class).
 
 **Who benefits?**
-
 - Transport authorities (NTSA, UK Dept of Transport)
 - Emergency responders
 - Road safety planners
 
 
 ### **2. Data Collection & Understanding**
-
 Source: UK STATS19 Road Safety Dataset
-
 
 Tables used:
 - Collisions (road & environment factors)
@@ -97,12 +93,11 @@ Plain explanation:
 - Show top contributing features.
 
 ### **9. Project Report Structure**
-- Title & Abstract – Road Accident Severity Prediction using Machine Learning
-- Problem Statement – Why this matters (road safety)
-- Data Collection & Understanding – STATS19 dataset overview, EDA
-- Data Preprocessing – Cleaning, encoding, balancing
-- Modeling Approach – Models tried, tuning process
-- Results & Evaluation – Metrics, confusion matrix, learning/validation curves
-- Error Analysis – Where model struggles and why
-
-- Conclusion & Future Work – Policy insights, improving rare class predictions
+a) Title & Abstract – Road Accident Severity Prediction using Machine Learning
+b) Problem Statement – Why this matters (road safety)
+c) Data Collection & Understanding – STATS19 dataset overview, EDA
+d) Data Preprocessing – Cleaning, encoding, balancing
+e) Modeling Approach – Models tried, tuning process
+f) Results & Evaluation – Metrics, confusion matrix, learning/validation curves
+g) Error Analysis – Where model struggles and why
+h) Conclusion & Future Work – Policy insights, improving rare class predictions
