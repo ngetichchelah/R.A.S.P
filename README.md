@@ -22,7 +22,7 @@ Why is it important?
 Fatal accidents are rare but devastating. Predicting severity can help with preventive policies.
 
 Who benefits?
-Transport authorities (NTSA, UK Dept of Transport)
+Transport authorities ( UK Dept of Transport)
 Emergency responders
 Road safety planners
 
