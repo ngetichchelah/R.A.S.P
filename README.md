@@ -1,119 +1,151 @@
-# Road Accident Severity Prediction
-1. **Project Selection**
+## **Road Accident Severity Prediction**
 
-Problem Statement:
+### **1. Project Selection**
 
-Predict the severity of road accidents (Slight, Serious, Fatal) using environmental, human, and vehicle-related factors.
+**Problem Statement:**
+- Predict the severity of road accidents (Slight, Serious, Fatal) using environmental, human, and vehicle-related factors. (from road, weather, driver, and vehicle features.)
 
-Why chosen:
-Road safety is a major global challenge.
+**Why chosen:**
 
-Identifying risk factors can help policymakers design better interventions.
-
-Dataset is rich, real-world, and publicly available.
+- Road safety is a major global challenge.
+- Fatal accidents are rare but devastating. Predicting severity can help with preventive policies.
+- Identifying risk factors can help policymakers design better interventions.
+- Dataset is rich, real-world, and publicly available.
 
 Type of ML Task:
-Classification (multi-class).
 
-2. **Problem Definition**
-Predict accident severity from road, weather, driver, and vehicle features.
+- Classification (multi-class).
 
-Why is it important?
-Fatal accidents are rare but devastating. Predicting severity can help with preventive policies.
+**Who benefits?**
 
-Who benefits?
-Transport authorities ( UK Dept of Transport)
-Emergency responders
-Road safety planners
+- Transport authorities (NTSA, UK Dept of Transport)
+- Emergency responders
+- Road safety planners
 
-3. **Data Collection & Understanding**
+
+### **2. Data Collection & Understanding**
+
 Source: UK STATS19 Road Safety Dataset
 
 
 Tables used:
-Collisions (road & environment factors)
-Casualties (human factors)
-Vehicles (vehicle details)
+- Collisions (road & environment factors)
+- Casualties (human factors)
+- Vehicles (vehicle details)
 
-Exploration:
-Data types: mix of categorical (weather, light, road surface) and numerical (speed limit, age).
+**Exploration:**
 
-Missing values present in some fields.
+- Data types: mix of categorical (weather, light, road surface) and numerical (speed limit, age).
 
-Severe class imbalance (Fatal ≪ Slight).
+- Missing values present in some fields.
 
-Outliers: extreme ages, invalid speed values.
+- Severe class imbalance (Fatal ≪ Slight).
 
-EDA visualizations:
-Severity distribution.
-Accidents by time of day.
-Correlation between road conditions & severity.
+- Outliers: extreme ages, invalid speed values.
 
-4. **Data Preprocessing**
+**EDA visualizations:**
+
+- Severity distribution.
+
+- Accidents by time of day.
+
+- Correlation between road conditions & severity.
+
+### **3. Data Preprocessing**
+
 Handle missing values (impute with mode/median, “Unknown” for categories).
+
 Encode categorical variables (One-Hot or Label encoding).
+
 Normalize/standardize numerical features if required.
+
 Address imbalanced target (use SMOTE oversampling + class weights).
-Split into Train (70%) / Test (30%) sets or 80/20
 
-5. **Modeling**
+Split into Train (70%) / Test (30%) sets.
 
-Baseline models: Logistic Regression, Decision Tree.
-Advanced models: Random Forest, XGBoost.
-Compare performance across models.
-Use GridSearchCV / RandomizedSearchCV for hyperparameter tuning.
-Select best-performing model (tradeoff between accuracy & interpretability).
+### **4. Modeling**
 
-6. **Evaluation**
+- Baseline models: Logistic Regression, Decision Tree.
 
-Metrics:
-Accuracy
-Precision, Recall, F1 (macro average for multi-class)
-Confusion matrix
-Model diagnostics:
-Validation curves (e.g., depth in trees).
-Learning curves (detect underfitting/overfitting).
-Feature importance: Identify top contributors to severity (e.g., weather, light, speed limit).
+- Advanced models: Random Forest, XGBoost.
 
-7. **Error Analysis**
+- Compare performance across models.
+
+- Use GridSearchCV / RandomizedSearchCV for hyperparameter tuning.
+
+- Select best-performing model (tradeoff between accuracy & interpretability).
+
+### **5. Evaluation**
+
+**Metrics:**
+- Accuracy
+- Precision, Recall, F1 (macro average for multi-class)
+- Confusion matrix
+
+**Model diagnostics:**
+
+- Validation curves (e.g., depth in trees).
+- Learning curves (detect underfitting/overfitting).
+- Feature importance: Identify top contributors to severity (e.g., weather, light, speed limit).
+
+### **6. Error Analysis**
+
 Confusion matrix to see which severities are most confused.
+
 Fatal vs Serious often misclassified (due to low fatal samples).
+
 Errors higher during rare conditions (e.g., fog).
 
-Reasons:
+**Reasons:**
+
 Imbalanced classes (few fatal samples).
+
 Some features are noisy or incomplete.
-Improvements:
+
+**Improvements:**
+
 Collect more balanced data.
+
 Engineer features (rush hour, weekend/weekday, rural/urban).
+
 Try ensemble models.
 
-8. **Model Interpretation**
+### **7. Model Interpretation**
+
 Tree-based feature importance: e.g., road type, speed limit, light conditions.
+
 SHAP values: show how individual features contribute to predictions.
+
 Plain explanation:
+
 “Accidents on wet roads at night are more likely to be serious/fatal.”
+
 “Higher speed limits correlate with more severe accidents.”
 
-9. **Deployment**
+### **8. Deployment**
+
 Build a Streamlit app:
+
 Input accident conditions → Output predicted severity.
+
 Show top contributing features.
 
-10. **Project Report Structure**
+Alternatively, deliver a documented Jupyter Notebook.
 
-Title & Abstract – Road Accident Severity Prediction using Machine Learning
+### **9. Project Report Structure**
 
-Problem Statement – Why this matters (road safety)
+- Title & Abstract – Road Accident Severity Prediction using Machine Learning
 
-Data Collection & Understanding – STATS19 dataset overview, EDA
+- Problem Statement – Why this matters (road safety)
 
-Data Preprocessing – Cleaning, encoding, balancing
+- Data Collection & Understanding – STATS19 dataset overview, EDA
 
-Modeling Approach – Models tried, tuning process
+- Data Preprocessing – Cleaning, encoding, balancing
 
-Results & Evaluation – Metrics, confusion matrix, learning/validation curves
+- Modeling Approach – Models tried, tuning process
 
-Error Analysis – Where model struggles and why
+- Results & Evaluation – Metrics, confusion matrix, learning/validation curves
 
-Conclusion & Future Work – Policy insights, improving rare class predictions
+- Error Analysis – Where model struggles and why
+
+- Conclusion & Future Work – Policy insights, improving rare class predictions
