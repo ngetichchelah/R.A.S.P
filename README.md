@@ -1,4 +1,4 @@
-### Road Accident Severity Prediction
+# Road Accident Severity Prediction
 1. **Project Selection**
 
 Problem Statement:
