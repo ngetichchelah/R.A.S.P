@@ -2,6 +2,7 @@
 1. **Project Selection**
 
 Problem Statement:
+
 Predict the severity of road accidents (Slight, Serious, Fatal) using environmental, human, and vehicle-related factors.
 
 Why chosen:
@@ -102,10 +103,17 @@ Show top contributing features.
 10. **Project Report Structure**
 
 Title & Abstract – Road Accident Severity Prediction using Machine Learning
+
 Problem Statement – Why this matters (road safety)
+
 Data Collection & Understanding – STATS19 dataset overview, EDA
+
 Data Preprocessing – Cleaning, encoding, balancing
+
 Modeling Approach – Models tried, tuning process
+
 Results & Evaluation – Metrics, confusion matrix, learning/validation curves
+
 Error Analysis – Where model struggles and why
+
 Conclusion & Future Work – Policy insights, improving rare class predictions
