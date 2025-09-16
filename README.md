@@ -3,7 +3,7 @@
 ### **1. Project Selection**
 
 **Problem Statement:**
-- Predict the severity of road accidents (Slight, Serious, Fatal) using environmental, human, and vehicle-related factors. (from road, weather, driver, and vehicle features.)
+- Predict the severity of road accidents (Slight, Serious/Fatal) using environmental, human, and vehicle-related factors. (from road, weather, driver, and vehicle features.)
 
 **Why chosen:**
 
